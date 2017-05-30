@@ -91,4 +91,5 @@ Change username/password via the webui in the webui section of settings.
 
 ## Versions
 
++ **30.05.17:** Rebase to alpine 3.6.
 + **19.05.17:** Initial Release.
