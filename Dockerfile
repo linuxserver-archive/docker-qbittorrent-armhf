@@ -40,7 +40,8 @@ RUN \
 	boost-thread \
 	ca-certificates \
 	geoip \
-	qt5-qtbase && \
+	qt5-qtbase \
+	unrar && \
 
 # compile libtorrent rasterbar
  git clone https://github.com/arvidn/libtorrent.git /tmp/libtorrent && \
