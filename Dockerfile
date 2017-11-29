@@ -7,8 +7,8 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package versions
-ARG QBITTORRENT_VER="3.3.16"
-ARG RASTERBAR_VER="RC_1_0"
+ARG QBITTORRENT_VER="4.0.1"
+ARG RASTERBAR_VER="1.1.5"
 
 # environment settings
 ENV HOME="/config" \
@@ -46,13 +46,13 @@ RUN \
 # compile libtorrent rasterbar
  git clone https://github.com/arvidn/libtorrent.git /tmp/libtorrent && \
  cd /tmp/libtorrent && \
- git checkout ${RASTERBAR_VER} && \
+ RASTERBAR_REALVER=${RASTERBAR_VER//./_} && \
+ git checkout "libtorrent-${RASTERBAR_REALVER}" && \
  ./autotool.sh && \
  ./configure \
 	--disable-debug \
 	--enable-encryption \
-	--prefix=/usr \
-	--with-libgeoip=system && \
+	--prefix=/usr && \
  make && \
  make install && \
  strip --strip-unneeded \
@@ -70,11 +70,14 @@ RUN \
 	/tmp/qbittorrent-src --strip-components=1 && \
  cd /tmp/qbittorrent-src/src/app && \
  patch -i /tmp/patches/main.patch && \
+ cp /tmp/patches/configure /tmp/qbittorrent-src && \
+ cp /tmp/patches/ax_boost_base.m4 /tmp/qbittorrent-src/m4/ax_boost_base.m4 && \
  cd /tmp/qbittorrent-src && \
  ./configure \
 	--disable-gui \
 	--prefix=/usr && \
  make && \
+ set +ex && \
  make install && \
 
 # cleanup
