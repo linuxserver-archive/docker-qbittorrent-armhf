@@ -10,6 +10,9 @@ LABEL maintainer="sparklyballs"
 ARG QBITTORRENT_VER="4.0.3"
 ARG RASTERBAR_VER="1.1.5"
 
+# work around for hanging configure
+ARG CONFIG_SHELL=/bin/sh
+
 # environment settings
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
