@@ -101,6 +101,7 @@ Change username/password via the webui in the webui section of settings.
 
 ## Versions
 
++ **02.01.18:** Deprecate cpu_core routine lack of scaling.
 + **20.12.17:** Rebase to alpine 3.7.
 + **01.12.17:** Update to v4.
 + **16.09.17:** Bump to 3.3.16, Add WEBUI_PORT variable and notes to README to allow changing port of webui.
