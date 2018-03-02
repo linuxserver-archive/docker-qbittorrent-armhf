@@ -101,6 +101,7 @@ Change username/password via the webui in the webui section of settings.
 
 ## Versions
 
++ **02.03.18:** Bump qbitorrent to 4.0.4 and libtorrent to 1.1.6.
 + **02.01.18:** Deprecate cpu_core routine lack of scaling.
 + **20.12.17:** Rebase to alpine 3.7.
 + **01.12.17:** Update to v4.
