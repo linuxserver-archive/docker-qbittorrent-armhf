@@ -5,6 +5,8 @@
 [appurl]: https://www.qbittorrent.org
 [hub]: https://hub.docker.com/r/lsioarmhf/qbittorrent/
 
+THIS IMAGE IS DEPRECATED. PLEASE USE THE MULTI-ARCH IMAGES AT `linuxserver/qbittorrent`
+
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
 The [LinuxServer.io][linuxserverurl] team brings you another container release featuring easy user mapping and community support. Find us for support at:
@@ -111,6 +113,7 @@ Change username/password via the webui in the webui section of settings.
 
 ## Versions
 
++ **09.01.19:** This image is deprecated. Please use the multi-arch images at linuxserver/qbittorrent
 + **25.09.18:** Use buildstage type build, bump qbitorrent to 4.1.3.
 + **14.08.18:** Rebase to alpine 3.8, bump libtorrent to 1.1.9 and qbitorrent to 4.1.2.
 + **08.06.18:** Bump qbitorrent to 4.1.1.
